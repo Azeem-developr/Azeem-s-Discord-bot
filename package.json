@@ -1,0 +1,39 @@
+{
+  "name": "discord-cfd-bot",
+  "version": "1.0.0",
+  "description": "Production-ready Discord bot for CFD prop firm server",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "dashboard": "node src/dashboard/server.js",
+    "dev:dashboard": "node --watch src/dashboard/server.js",
+    "app": "concurrently -k -n api,web \"node src/dashboard/server.js\" \"npm --prefix dashboard run dev\""
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "cfd",
+    "prop-firm"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.3",
+    "cors": "^2.8.5",
+    "discord.js": "^14.25.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.22.1",
+    "express-session": "^1.17.3",
+    "mongodb": "^7.0.0",
+    "mongoose": "^8.0.3",
+    "passport": "^0.7.0",
+    "passport-discord": "^0.1.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.0",
+    "concurrently": "^9.2.0",
+    "vite": "^5.0.0"
+  }
+}
